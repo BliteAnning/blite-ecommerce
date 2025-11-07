@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-slate-100;  
+}
+/*user table*/
+.usertable{
+  @apply bg-white p-3
+}
+.usertable th{
+  @apply  text-base font-medium
+}
+
+.usertable td{
+  @apply  text-base font-light text-center
+}
+
+.scrollbar-none::-webkit-scrollbar{
+  display: none;
+}
