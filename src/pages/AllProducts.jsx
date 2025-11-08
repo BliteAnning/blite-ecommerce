@@ -14,7 +14,7 @@ const AllProducts = () => {
             
             if(response.data.success){
                 
-                console.log("Data fetched", response.data );
+                //console.log("Data fetched", response.data );
                 setAllProducts(response.data?.data)
             }
 

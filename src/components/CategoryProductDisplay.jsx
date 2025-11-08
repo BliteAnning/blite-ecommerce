@@ -20,7 +20,7 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
     const getData = async () => {
         setLoading(true)
         const categoryWiseProduct = await FetchCategoryWise(category)
-        console.log("pro", categoryWiseProduct)
+        //console.log("pro", categoryWiseProduct)
         setLoading(false)
 
         setData(categoryWiseProduct?.data)

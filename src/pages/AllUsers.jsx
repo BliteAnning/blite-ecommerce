@@ -19,7 +19,7 @@ const AllUsers = () => {
 
         if (response.data.success) {
             setAllUsers(response.data.data)
-            console.log(response.data)
+           // console.log(response.data)
         }
 
     }

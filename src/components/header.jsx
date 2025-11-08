@@ -19,7 +19,9 @@ const Header = () => {
     const { cartCount } = useStored()
     const navigate = useNavigate()
     const searchInput = useLocation()
-    const [search, setSearch] = useState(searchInput?.search?.split("=")[1])
+    const URLsearch = new URLSearchParams(searchInput?.search)
+    const searchQuery = URLsearch.getAll("q")
+    const [search, setSearch] = useState(searchQuery)
 
     //console.log('search', user)
 
@@ -29,6 +31,7 @@ const Header = () => {
         if (response.data.success) {
             toast.success(response.data.message)
             dispatch(setUserDetails(null))
+            navigate("/")
         }
 
         if (response.error) {

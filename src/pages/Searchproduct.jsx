@@ -1,4 +1,3 @@
-import React from 'react'
 import { useLocation } from 'react-router-dom'
 import axiosInstance from '../axiosInstance'
 import { useEffect } from 'react'
@@ -10,7 +9,7 @@ const Searchproduct = () => {
     const [data,setData] = useState([])
     const [loading, setLoading] = useState(false)
 
-   console.log("queries", query.search);
+   //console.log("queries", query.search);
     
 
     const getSearchProduct = async () =>{

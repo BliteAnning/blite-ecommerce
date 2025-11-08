@@ -13,23 +13,27 @@ const ViewCart = () => {
     const loadingCart = new Array(Math.max(1, cartCount || 1)).fill(null)
 
     const getData = async () => {
-        setLoading(true)
+        
         try {
             const response = await axiosInstance.get("/view-cart", { withCredentials: true })
             if (response.data.success) {
-                console.log("data", response.data.data)
+                
                 setData(response.data.data)
             }
         } catch (err) {
             console.error("getData error:", err)
             setData([])
-        } finally {
-            setLoading(false) // ensure loading is always cleared
         }
     }
 
+    const handleloading = async()=>{
+        await getData()
+    }
+
     useEffect(() => {
-        getData();
+        setLoading(true)
+        handleloading()
+        setLoading(false)
 
     }, [])
 
