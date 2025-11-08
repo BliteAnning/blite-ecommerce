@@ -1,7 +1,7 @@
 import express from 'express'
 import {addToCart, addToViewProduct, countCartproducts, deleteCartProduct, getAllUsers, loginUser, logout, register, updateCartProduct, updateUser, userDetails}  from '../controllers/userController.js';
 import authMiddleware from '../middleware/auth.js';
-import { getAllProducts, getCategoryProduct, getCategoryWiseProduction, getProductDetails, searchProduct, updateProduct, uploadProduct } from '../controllers/productsController.js';
+import { filterProduct, getAllProducts, getCategoryProduct, getCategoryWiseProduction, getProductDetails, searchProduct, updateProduct, uploadProduct } from '../controllers/productsController.js';
 
 
 
@@ -25,6 +25,7 @@ userRouter.get("/get-category", getCategoryProduct)
 userRouter.post("/get-a-category", getCategoryWiseProduction)
 userRouter.post("/product-details", getProductDetails)
 userRouter.get("/search-product", searchProduct)
+userRouter.post("/filter-product", filterProduct)
 
 
 
